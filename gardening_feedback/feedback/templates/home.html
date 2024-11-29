@@ -1,0 +1,17 @@
+<h1>Welcome to the Gardening Tips Feedback Page</h1>
+
+<h2>User Feedbacks:</h2>
+{% if feedbacks %}
+    <ul>
+        {% for feedback in feedbacks %}
+            <li>
+                <strong>{{ feedback.name }}</strong> ({{ feedback.email }})<br>
+                Rating: {{ feedback.rating }} / 5<br>
+                Comments: {{ feedback.comments }}<br>
+                <hr>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No feedback available yet.</p>
+{% endif %}
